@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="background">
+  <div class="container">
+    <div class="whiteForm">
+      <mat-grid-list cols="2" rowHeight="6:1" [gutterSize]="'20px'">
+        <mat-grid-tile colspan="2" rowspan="3">
+          <mat-icon [ngStyle]="{ color: 'green' }" class="material-icons">
+            done
+          </mat-icon>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <h1>Vous avez envoyé XX.XX à XX.XX</h1>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <button mat-raised-button color="primary">
+            Effectuer un nouveau virement
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <button mat-raised-button color="primary">
+            Revenir au récapitulatif
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
