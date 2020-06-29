@@ -10,6 +10,8 @@ import { TransferModule } from './transfer/transfer.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { BasicAuthHtppInterceptorService } from './authentification/services/basic-auth-http-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ConfirmationDialogComponent } from './shared/components/confirmation-dialog/confirmation-dialog.component';
+import { RechargeModule } from './recharge/recharge.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +22,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AccountModule,
     TransferModule,
     AuthentificationModule,
+    RechargeModule,
   ],
   providers: [
     {
@@ -29,5 +32,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     },
   ],
   bootstrap: [AppComponent],
+  entryComponents: [ConfirmationDialogComponent],
 })
 export class AppModule {}

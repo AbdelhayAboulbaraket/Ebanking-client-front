@@ -9,16 +9,16 @@
           </mat-icon>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
-          <h1>Vous avez envoyé XX.XX à XX.XX</h1>
+          <h1>Virement effectué avec succes.</h1>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
-          <button mat-raised-button color="primary">
-            Effectuer un nouveau virement
+          <button mat-raised-button color="primary" (click)="goToTransfers()">
+            Revenir au virements
           </button>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
-          <button mat-raised-button color="primary">
-            Revenir au récapitulatif
+          <button mat-raised-button color="primary" routerLink="/overview">
+            Revenir au comptes
           </button>
         </mat-grid-tile>
       </mat-grid-list>

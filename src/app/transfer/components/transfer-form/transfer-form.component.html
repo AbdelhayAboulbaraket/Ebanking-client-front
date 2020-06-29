@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="background">
-  <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="transferForm" (ngSubmit)="openDialog()">
     <div class="container">
       <div class="whiteForm">
         <mat-grid-list cols="2" rowHeight="6:1" [gutterSize]="'20px'">

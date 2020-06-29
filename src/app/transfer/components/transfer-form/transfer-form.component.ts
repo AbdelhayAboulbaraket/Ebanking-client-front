@@ -10,6 +10,7 @@ import { TransferState } from '@angular/platform-browser';
 import { Quotes } from 'src/app/shared/models/quotes';
 import { RateResponse } from 'src/app/shared/models/rate-response';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-transfer-form',
@@ -27,7 +28,6 @@ export class TransferFormComponent implements OnInit {
   account1: Account;
   account2: Account;
   rates: RateResponse;
-  dialog: any;
 
   get id() {
     return this.transferForm.get('id');
@@ -43,7 +43,8 @@ export class TransferFormComponent implements OnInit {
     private router: Router,
     private transferService: TransferService,
     private accountService: AccountService,
-    private currencyService: CurrencyConversionService
+    private currencyService: CurrencyConversionService,
+    public dialog: MatDialog
   ) {
     this.account1 = new Account();
     this.transfer = new Transfer();
@@ -73,7 +74,7 @@ export class TransferFormComponent implements OnInit {
 
             this.transferService
               .save(this.transfer)
-              .subscribe((result) => this.gotoTransferList());
+              .subscribe((result) => this.goToTransferComplete());
           },
           (error) => console.log(error)
         );
@@ -86,8 +87,8 @@ export class TransferFormComponent implements OnInit {
     );
   }
 
-  gotoTransferList() {
-    this.router.navigate(['/compte/' + this.codeId + '/virements']);
+  goToTransferComplete() {
+    this.router.navigate(['/virementEffectue/' + this.codeId]);
   }
 
   ngOnInit(): void {
@@ -119,7 +120,7 @@ export class TransferFormComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-  /* openDialog(): void {
+  openDialog(): void {
     console.log('salam');
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '350px',
@@ -133,5 +134,5 @@ export class TransferFormComponent implements OnInit {
         this.onSubmit();
       }
     });
-  } */
+  }
 }

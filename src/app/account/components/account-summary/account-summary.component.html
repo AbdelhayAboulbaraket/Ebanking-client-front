@@ -26,6 +26,13 @@
             >
               Faire un virement
             </button>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'rechargeForm']"
+            >
+              Faire une recharge
+            </button>
           </div>
         </mat-grid-tile>
       </mat-grid-list>
