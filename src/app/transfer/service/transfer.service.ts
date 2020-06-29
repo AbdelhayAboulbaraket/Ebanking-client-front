@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class TransferService {
   private transferUrl: string;
   constructor(private http: HttpClient) {
-    this.transferUrl = 'http://localhost:8081/virement';
+    this.transferUrl = 'https://ebanking-banking.herokuapp.com/virement';
   }
   public findAll(code: string): Observable<Transfer[]> {
     return this.http.get<Transfer[]>(
-      'http://localhost:8081/compte/' + code + '/virements'
+      'https://ebanking-banking.herokuapp.com/compte/' + code + '/virements'
     );
   }
 

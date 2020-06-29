@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class RechargeService {
   private rechargeUrl: string;
   constructor(private http: HttpClient) {
-    this.rechargeUrl = 'http://localhost:8081/recharge';
+    this.rechargeUrl = 'https://ebanking-banking.herokuapp.com/recharge';
   }
   public findAll(code: string): Observable<Recharge[]> {
     return this.http.get<Recharge[]>(
-      'http://localhost:8081/compte/' + code + '/recharges'
+      'https://ebanking-banking.herokuapp.com/compte/' + code + '/recharges'
     );
   }
   public findAlll(): Observable<Recharge[]> {

@@ -9,7 +9,7 @@ import { Account } from '../model/account';
 export class AccountService {
   private accountUrl: string;
   constructor(private http: HttpClient) {
-    this.accountUrl = 'http://localhost:8081/compte';
+    this.accountUrl = 'https://ebanking-banking.herokuapp.com/compte';
   }
 
   public findAccountNum(id: string): Observable<Account> {
