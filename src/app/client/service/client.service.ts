@@ -11,7 +11,7 @@ import { Operator } from 'src/app/shared/models/operator';
 export class ClientService {
   private clientUrl: string;
   constructor(private http: HttpClient) {
-    this.clientUrl = 'https://ebanking-banking.herokuapp.com/client';
+    this.clientUrl = 'http://localhost:8081/client';
   }
 
   public findClientAccounts(id: string): Observable<Account[]> {
@@ -19,8 +19,6 @@ export class ClientService {
   }
 
   public findOperators(): Observable<Operator[]> {
-    return this.http.get<Operator[]>(
-      'https://ebanking-banking.herokuapp.com/operateurs'
-    );
+    return this.http.get<Operator[]>('http://localhost:8081/operateurs');
   }
 }

@@ -13,12 +13,9 @@ export class AuthentificationService {
       Authorization: 'Basic ' + btoa(username + ':' + password),
     });
     return this.httpClient
-      .get<Client>(
-        'https://ebanking-banking.herokuapp.com/client/username/' + username,
-        {
-          headers,
-        }
-      )
+      .get<Client>('http://localhost:8081/client/username/' + username, {
+        headers,
+      })
       .pipe(
         map((userData) => {
           sessionStorage.setItem('username', username);
